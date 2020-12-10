@@ -9,7 +9,7 @@ const ProductDetails = (props) => {
       classArr.push(classes.SelectedProductImage);
     }
     return (
-      <img key={pos} className={classArr.join(" ")} src={item.imageUrl} alt={item.styleName} onClick={() => props.onColorOptionClick(pos) }/>
+      <img key={pos} className={classArr.join(" ")} src={item.imageUrl} alt={item.styleName} onClick={() => props.onColorOptionClick(pos)} />
     );
   })
 
@@ -17,7 +17,7 @@ const ProductDetails = (props) => {
     const classArr = [classes.FeatureItem];
     if (pos === props.currentSelectedFeature) {//priskiriam klase pasirinktam elementui
       classArr.push(classes.SelectedFeatureItem);
-    } else if(pos === 0 && !props.showHeartBeatSection){
+    } else if (pos === 0 && !props.showHeartBeatSection) {
       classArr.push(classes.SelectedFeatureItem);
     }
     return (
@@ -25,22 +25,22 @@ const ProductDetails = (props) => {
     );
   })
 
-    return(
-        <div className={classes.ProductData}>
-  <h1 className={classes.ProductTitle}>{props.data.title}</h1>
-  <p className={classes.ProductDescription}>{props.data.description}</p>
-<h3 className={classes.SectionHeading}>Select Color</h3>
-        <div>
-          {colorOptions}
+  return (
+    <div className={classes.ProductData}>
+      <h1 className={classes.ProductTitle}>{props.data.title}</h1>
+      <p className={classes.ProductDescription}>{props.data.description}</p>
+      <h3 className={classes.SectionHeading}>Select Color</h3>
+      <div>
+        {colorOptions}
 
-</div>
-<h3 className={classes.SectionHeading}>Features</h3>
-<div>
-  {featureList}
-</div>
-<button className={classes.PrimaryButton}>Buy Now</button>
-        </div>
-    )
+      </div>
+      <h3 className={classes.SectionHeading}>Features</h3>
+      <div>
+        {featureList}
+      </div>
+      <button className={classes.PrimaryButton}>Buy Now</button>
+    </div>
+  )
 }
 
 export default ProductDetails;
